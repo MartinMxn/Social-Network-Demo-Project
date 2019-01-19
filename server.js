@@ -8,7 +8,7 @@ const express = require("express"),
     posts = require("./routes/api/post"),
 
     app = express()
-    
+    path = require("path");
 
 //Body parser middlewares
 app.use(bodyParser.urlencoded({extended:false}));
@@ -35,6 +35,16 @@ require("./config/passport.js")(passport);
 app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
+
+//Server static assets if in production
+if(process.env.NODE_ENV === 'production') {
+    //Set static folder
+    app.use(express.static('client/build'));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    })
+}
 
 
 const port = process.env.PORT || 5000;
