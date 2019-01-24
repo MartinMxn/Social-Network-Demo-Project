@@ -24,12 +24,12 @@ class Landing extends Component {
                   Create a developer profile/portfolio, share posts and get help
                   from other developers
                 </p>
-                <hr />
+                <div className="LandHr"></div>
                 <Link to="/register" className="btn btn-lg btn-info mr-2">
-                  Sign Up
+                  Say Hello!
                 </Link>
                 <Link to="/login" className="btn btn-lg btn-light">
-                  Login
+                  Come Back!
                 </Link>
               </div>
             </div>

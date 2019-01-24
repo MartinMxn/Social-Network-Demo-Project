@@ -37,3 +37,16 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-top: 2px solid rgb(255, 255, 255);
+}
+
+.LandHr{
+  background:linear-gradient(to left,#00000000,#b8b8b8,#00000000);
+  height:2px;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}

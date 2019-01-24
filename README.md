@@ -1,3 +1,8 @@
 # Social-Network-Project
 Simple Social Network Web Application with React.js, Redux, Node.js, and MongoDB
-Create Profiles 01.16
+
+## npm install
+in both devconnector and devconnector/client
+
+## npm run dev
+under devconnector

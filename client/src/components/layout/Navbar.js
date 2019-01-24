@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { clearCurrentProfile } from "../../actions/profileActions";
+import { Icon } from "antd";
 
 class Navbar extends Component {
   onLogoutClick(e) {
@@ -17,7 +18,13 @@ class Navbar extends Component {
 
     const authLinks = (
       <ul className="navbar-nav ml-auto">
-      <li className="nav-item">
+        <li className="nav-item">
+          <Link className="nav-link" to="/profiles">
+            {" "}
+            Developers
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link" to="/feed">
             Post Feed
           </Link>
@@ -49,6 +56,12 @@ class Navbar extends Component {
     const guestLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+          <Link className="nav-link" to="/profiles">
+            {" "}
+            Developers
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link" to="/register">
             Sign Up
           </Link>
@@ -64,9 +77,16 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
         <div className="container">
+          <Icon
+            type="deployment-unit"
+            style={{ color: "rgb(255, 255, 255)", marginRight:"10px"}}
+          />
+
           <Link className="navbar-brand" to="/">
             DevConnector
           </Link>
+
+          {/* button for mobile nav */}
           <button
             className="navbar-toggler"
             type="button"
@@ -76,16 +96,8 @@ class Navbar extends Component {
             <span className="navbar-toggler-icon" />
           </button>
 
+          {/* right side buttons */}
           <div className="collapse navbar-collapse" id="mobile-nav">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
-                  {" "}
-                  Developers
-                </Link>
-              </li>
-            </ul>
-
             {isAuthenticated ? authLinks : guestLinks}
           </div>
         </div>
