@@ -1,8 +1,17 @@
 # Social-Network-Project
 Simple Social Network Web Application with React.js, Redux, Node.js, and MongoDB
 
-## npm install
-in both devconnector and devconnector/client
+##1. clone
 
-## npm run dev
-under devconnector
+##2. dependencies install
+
+run
+> npm install
+
+in both devconnector and client folder
+
+##3. local test
+run
+> npm run dev
+
+under devconnector folder
